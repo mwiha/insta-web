@@ -13,16 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.contrib import admin
-from django.contrib.auth import views
-
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('instaclone.urls')),
-    url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^logout/$', views.logout, {"next_page": '/'}),
-    # url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^$',views.timeline,name='timeline'),
+    url(r'^search/', views.search_results, name = 'search_results'),
+    url(r'^explore/', views.explore, name = 'explore'),
+    url(r'^accounts/profile/(\d+)', views.profile, name = 'profile'),
+    url(r'^new/post/', views.new_post, name = 'new-post'),
+    url(r'^accounts/edit-profile/', views.edit_profile, name = 'edit-profile'),
+
+
+]
+
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 ]
