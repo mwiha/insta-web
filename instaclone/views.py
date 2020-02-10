@@ -19,13 +19,13 @@ def timeline(request):
     comments=Comment.objects.all()
     likes = Like.objects.all()
 
-    # for post in posts:
-    #     num_likes=0
-    #     for like in likes:
-    #         if post.id == like.post.id:
-    #             num_likes +=1
-    #     post.likes = num_likes
-    #     post.save()
+    for post in posts:
+        num_likes=0
+        for like in likes:
+            if post.id == like.post.id:
+                num_likes +=1
+        post.likes = num_likes
+        post.save()
 
     if request.method == 'POST' and 'liker' in request.POST:
         post_id = request.POST.get("liker")
@@ -105,32 +105,32 @@ def profile(request,id):
     posts = Post.objects.filter(upload_by = user)
     follows = Follow.objects.all()
 
-    if request.method == 'POST' and 'follower' in request.POST:
-        print("follow saved")
-        followed_user_id = request.POST.get("follower")
-        followform = FollowForm(request.POST)
-        if followform.is_valid():
-            followed_user_id = int(request.POST.get("follower"))
-            current_user = Profile.objects.get(username__id=request.user.id)
-            follow = followform.save(commit=False)
-            follow.username = request.user
-            followed_user = User.objects.get(pk=followed_user_id)
-            print(followed_user)
-            follow.followed = followed_user
-            follow.follow_id = str(follow.username.id)+"-"+str(follow.followed.id)
-            follow.save()
-            print("follow saved")
+    # if request.method == 'POST' and 'follower' in request.POST:
+    #     print("follow saved")
+    #     followed_user_id = request.POST.get("follower")
+    #     followform = FollowForm(request.POST)
+    #     if followform.is_valid():
+    #         followed_user_id = int(request.POST.get("follower"))
+    #         current_user = Profile.objects.get(username__id=request.user.id)
+    #         follow = followform.save(commit=False)
+    #         follow.username = request.user
+    #         followed_user = User.objects.get(pk=followed_user_id)
+    #         print(followed_user)
+    #         follow.followed = followed_user
+    #         follow.follow_id = str(follow.username.id)+"-"+str(follow.followed.id)
+    #         follow.save()
+    #         print("follow saved")
 
-        return redirect("profile", user.username.id)
-    else:
-        followform = FollowForm()
+    #     return redirect("profile", user.username.id)
+    # else:
+    #     followform = FollowForm()
 
-    if request.method == 'POST' and 'unfollower' in request.POST:
-        followed_user_id = request.POST.get("unfollower")
-        followed_user = User.objects.get(pk=followed_user_id)
-        follow_id = str(request.user.id)+"-"+str(followed_user.id)
-        follow_delete = Follow.objects.get(follow_id=follow_id)
-        follow_delete.delete()
+    # if request.method == 'POST' and 'unfollower' in request.POST:
+    #     followed_user_id = request.POST.get("unfollower")
+    #     followed_user = User.objects.get(pk=followed_user_id)
+    #     follow_id = str(request.user.id)+"-"+str(followed_user.id)
+    #     follow_delete = Follow.objects.get(follow_id=follow_id)
+    #     follow_delete.delete()
 
 
 
