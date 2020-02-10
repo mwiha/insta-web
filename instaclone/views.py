@@ -19,13 +19,13 @@ def timeline(request):
     comments=Comment.objects.all()
     likes = Like.objects.all()
 
-    for post in posts:
-        num_likes=0
-        for like in likes:
-            if post.id == like.post.id:
-                num_likes +=1
-        post.likes = num_likes
-        post.save()
+    # for post in posts:
+    #     num_likes=0
+    #     for like in likes:
+    #         if post.id == like.post.id:
+    #             num_likes +=1
+    #     post.likes = num_likes
+    #     post.save()
 
     if request.method == 'POST' and 'liker' in request.POST:
         post_id = request.POST.get("liker")
