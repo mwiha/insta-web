@@ -4,17 +4,17 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from .models import Post,Profile,Comment,Like,Follow,User
 from .forms import NewPostForm,ProfileForm,CommentForm,LikeForm,FollowForm
+from django.contrib import messages
 # from .forms import PostForm,LocationForm,ProfileForm,CommentForm
-# from django.http import JsonResponse
 
 from django.db.models import Q
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
-def timeline(request):
-    posts= Post.objects.all().order_by("-id")
-    profiles= Profile.objects.all()
-    current_user = request.user
+# @login_required(login_url='/accounts/login/')
+# def timeline(request):
+#     posts= Post.objects.all().order_by("-id")
+#     profiles= Profile.objects.all()
+#     current_user = request.user
 
     comments=Comment.objects.all()
     likes = Like.objects.all()
@@ -77,13 +77,14 @@ def timeline(request):
 def search_results(request):
     if 'search' in request.GET and request.GET["search"]:
         search_term = request.GET.get("search")
-        searched_users = Profile.search_profile(search_term)
-        message=f"Search results for: {search_term}"
+        searched_users = User.search_user(search_term)
+        messages = f"{search_term}"
+
 
         return render(request,'search.html',{"message":message,"users":searched_users})
 
     else:
-        message="You haven't searched for any term."
+        messages="You haven't searched for any term."
         return render(request,'search.html',{"message":message})
 
 

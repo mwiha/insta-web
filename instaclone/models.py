@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from tinymce.models import HTMLField
 from django.db.models import Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -29,7 +28,8 @@ class Profile(models.Model):
     profile_pic = models.ImageField(upload_to='photos/',null=True)
     fullname = models.CharField(max_length=255,null=True)
     username = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
-    bio = HTMLField(null=True)
+    # bio = HTMLField(null=True)
+    bio = models.TextField(max_length=100)
     email = models.EmailField(null=True)
     phonenumber = models.IntegerField(null=True)
     gender = models.CharField(max_length=15,choices=Gender,default="Male",null=True)
