@@ -170,7 +170,7 @@ def new_post(request):
 
     else:
         form = NewPostForm()
-    return render(request, 'new_post.html', {"form": form})
+        return render(request, 'new_post.html', {"form": form})
 
 
 # def comment():
