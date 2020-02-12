@@ -18,12 +18,12 @@
 
             {% if user == current_user %}
             <a href="{% url 'edit-profile' %}">
-                <button class="btn btn-warning" type="button" name="button"><i class="fas fa-pencil-alt"></i>Edit
+                <button class="btn btn-warning btn-sm" type="button" name="button"><i class="fas fa-pencil-alt"></i> &nbsp; Edit
                     Profile</button>
             </a>
             <a href="/logout/">
-                <button class="btn btn-danger" type="button" name="button"> <img
-                        src="https://bit.ly/38kVynl" width="24"> Logout</button>
+                <button class="btn btn-danger btn-sm" type="button" name="button"> <img
+                        src="https://bit.ly/38kVynl" width="20"> Logout</button>
             </a>
             <p></p>
             {% endif %}
