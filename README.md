@@ -3,10 +3,26 @@
 ## Description
 - This is a clone of Instagram where users can users can sign up, login, view and post photos.Users can also search and follow other users.
 
-## User story
+## Features
+As a user you will be able to:
+
 - Sign in to the application to start using.
 - Upload a pictures to the application.
 - Search for different users using their usernames.
 - See your profile with all your pictures.
 - Follow other users and see their pictures on my timeline.
+
+## BDD
+| Behavior            | Input                         | Output                        | 
+| ------------------- | ----------------------------- | ----------------------------- |
+| User visits the app and gets redirected to the login page  | User logs in | Directed to the home page where they see posted photos | 
+If user has no account, they click on `sign up` | User signs up | User is redirected to the log in page |
+|  Home page loads | Add comment  | Comment posted appears |
+|  Homepage loads | Click `profile` | User's profile appears | 
+| Homepage loads | Click `upload image` icon | User's redirected to a page where they can upload an image |  
+| Homepage loads | User inputs in the search form and presses enter | Searched results show |
+| A list of users displays | Click `follow` button to follow | Reloaded to the homepage
+
+
+
 
