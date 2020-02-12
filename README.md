@@ -48,6 +48,11 @@ If user has no account, they click on `sign up` | User signs up | User is redire
 
         $ python3.6 manage.py test photos
 
+## Contacts
+- For more informations or questions:
+   alicemwihaki99@gmail.com
+    
+
 
 
 
