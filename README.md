@@ -21,7 +21,13 @@ If user has no account, they click on `sign up` | User signs up | User is redire
 |  Homepage loads | Click `profile` | User's profile appears | 
 | Homepage loads | Click `upload image` icon | User's redirected to a page where they can upload an image |  
 | Homepage loads | User inputs in the search form and presses enter | Searched results show |
-| A list of users displays | Click `follow` button to follow | Reloaded to the homepage
+| A list of users displays | Click `follow` button to follow | Reloaded to the homepage|
+
+## Technology used
+1.python
+2.Django
+3.Bootstrap
+
 
 
 
