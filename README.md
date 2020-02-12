@@ -24,9 +24,9 @@ If user has no account, they click on `sign up` | User signs up | User is redire
 | A list of users displays | Click `follow` button to follow | Reloaded to the homepage|
 
 ## Technology used
-1.python
-2.Django
-3.Bootstrap
+1. python
+2. Django
+3. Bootstrap
 
 ## Running the Application
 - Install virtual environment using `$ python3.6 -m venv --without-pip virtual`
