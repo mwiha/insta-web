@@ -49,7 +49,7 @@ If user has no account, they click on `sign up` | User signs up | User is redire
         $ python3.6 manage.py test photos
 
 ## Known Bugs
-- it is not uploading pictures        
+- the search button is not functioning       
 
 ## Contacts
 - For more informations or questions:
