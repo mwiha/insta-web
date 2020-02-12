@@ -8,12 +8,6 @@ class NewPostForm(forms.ModelForm):
         model = Post
         exclude = ['upload_by', 'pub_date','likes','location']
 
-
-# class ProfileForm(forms.ModelForm):
-#     class Meta:
-#         model=Profile
-#         exclude=['username']
-
 class CommentForm(forms.ModelForm):
     class Meta:
         model=Comment
