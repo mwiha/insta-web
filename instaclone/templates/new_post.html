@@ -8,9 +8,9 @@
     <br>
     <p class="border border-secondary bg-secondary text-white">Post A Photo</p>
     <form  action="{%url 'new-post'%}" method="post" enctype="multipart/form-data">
-        {%csrf_token%}
+        {%csrf_token %}
 
-        {% bootstrap_form form%}
+        {% bootstrap_form form %}
         <input type="submit" class="btn btn-success btn-lg" value="Post">
     </form>
   </div>

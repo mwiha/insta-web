@@ -3,7 +3,7 @@
     <div id='left'>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <a href='/'><img src='https://bit.ly/3bw6bGb' style="font-size: 20px;"></a>
+      <a href='/'><i class="fab fa-instagram fa-3x " style="color: red;"></i></a>
     </div> <!-- end div left -->
     <div id='center'>
       <form class="navbar-form navbar-left" action="{% url 'search_results'%}">
@@ -13,12 +13,9 @@
       </form>
     </div>
     <div class="profile">
-      <a class="mr-2" href="{% url 'profile' request.user.id %}"><img src='http://freeiconbox.com/icon/256/23228.png'
-          class='nav-icon' style="font-size: 5px;"></a>
-      <a class="mr-2" href="#"><img src='http://image.flaticon.com/icons/png/128/126/126471.png' class='nav-icon'
-          style="font-size: 20px" ;></a>
-      <a class="mr-2" href="{% url 'explore' %}"><img src='https://static.thenounproject.com/png/169707-200.png'
-          class='nav-icon' style="font-size: 5px" ;></a>
+      <a class="mr-2" href="{% url 'profile' request.user.id %}"><i class="far fa-user fa-3x"></i></a>
+      <a class="mr-2" href="#"><i class="far fa-heart fa-3x"></i></a>
+      <a class="mr-2" href="{% url 'explore' %}"><i class="far fa-compass fa-3x"></i></a>
     </div>   
   </div>  
 </div>  
