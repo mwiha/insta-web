@@ -48,11 +48,15 @@ If user has no account, they click on `sign up` | User signs up | User is redire
 
         $ python3.6 manage.py test photos
 
+## Known Bugs
+- it is not uploading pictures        
+
 ## Contacts
 - For more informations or questions:
    alicemwihaki99@gmail.com
     
-
+## License
+- This project is Licensed under MIT. ©2019 Copyright.
 
 
 
